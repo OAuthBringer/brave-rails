@@ -1,0 +1,30 @@
+version: "2.1"
+services:
+#  db:
+#    image: postgres
+#    container_name: rails-api-db 
+#    environment:
+#      - PGHOST=db
+#      - PGPASSWORD=password
+#      - PGUSER=postgres # development only, super user
+#      - PGDATABASE=api
+#    ports:
+#      - "5432:5432"
+  api:
+    build: .
+#    depends_on:
+#      - "db"
+    links:
+      - "db"
+    ports:
+      - "3000:3000"
+    environment:
+      - RAILS_ENV=development
+      - PGHOST=db
+      - PGPASSWORD=password
+      - PGUSER=postgres # development only, super user
+      - PGDATABASE=api
+      - JWT_SECRET=e3ee83f432684aa43fa065e912430f1a93b692035c0753ff9a66b750710aee2461c0a9eba057f1431c322437bbacee8a997242d0d54c55bab43dfddc0b029dd9 
+      - DEVISE_SECRET=e3ee83f432684aa43fa065e912430f1a93b692035c0753ff9a66b750710aee2461c0a9eba057f1431c322437bbacee8a997242d0d54c55bab43dfddc0b029dd9 
+    volumes:
+      - "./api:/var/www"

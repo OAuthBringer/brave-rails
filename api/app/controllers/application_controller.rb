@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::API
-  respond_to :json
-
-  def index
+  def health
     render json: { success: true }, status: 200
+  end
 end

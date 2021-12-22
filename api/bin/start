@@ -1,5 +1,9 @@
 #!/bin/bash
 
-rails db:create
-rails db:migrate
-rails server
+if [ "$RAILS_ENV" = "development" ]; then
+  rails db:create;
+fi
+
+rails db:migrate;
+
+bundle exec puma -e $RAILS_ENV -C ./config/puma.rb;

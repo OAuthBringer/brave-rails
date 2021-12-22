@@ -5,6 +5,7 @@ default:
 development:
   db: 0
 test:
+  host: 127.0.0.1
   db: 0
 staging:
   db: 0

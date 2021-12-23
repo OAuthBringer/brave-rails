@@ -21,6 +21,7 @@ group :development, :test do
   gem 'webmock', '~> 3.3'
   gem 'database_cleaner'
   gem 'factory_bot_rails'
+  gem "fakeredis", :require => "fakeredis/rspec"
   gem 'faker'
 end
 

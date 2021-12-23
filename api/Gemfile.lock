@@ -87,6 +87,8 @@ GEM
       railties (>= 5.0.0)
     faker (2.19.0)
       i18n (>= 1.6, < 2)
+    fakeredis (0.8.0)
+      redis (~> 4.1)
     globalid (1.0.0)
       activesupport (>= 5.0)
     hashdiff (1.0.1)
@@ -209,6 +211,7 @@ DEPENDENCIES
   database_cleaner
   factory_bot_rails
   faker
+  fakeredis
   hiredis
   pg (~> 1.0)
   pry

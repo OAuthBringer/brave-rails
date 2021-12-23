@@ -1,5 +1,10 @@
 version: "2.1"
 services:
+  redis:
+    image: redis:3.2
+    container_name: swapi-cache
+    ports:
+      - "6379:6379"
   db:
     image: postgres
     container_name: rails-api-db 
